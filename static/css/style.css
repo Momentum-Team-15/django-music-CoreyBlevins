@@ -1,4 +1,81 @@
 * {
     box-sizing: border-box;
-    text-align: center;
+    margin:10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+body {
+    background: lightgray;
+}
+#home-header,
+#home-header h2 a:visited {
+    text-align: center;
+    background: navy;
+    color: white;
+    padding: 10px;
+}
+.button {
+    background: navy;
+    color: white;
+    padding: 10px;
+}
+.create {
+    float: right;
+}
+#albums {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 30px;
+}
+.album-box {
+    border: 1px solid navy;
+    background: white;
+    display: flex;
+}
+.album-images {
+    border: 1px solid navy;
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+.album-text,
+.album-text a:visited {
+    color: black;
+}
+.detail-images {
+    border: 1px solid navy;
+}
+#create-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid navy;
+    background: white;
+    width: 40%;
+    margin: auto;
+}
+#album-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid navy;
+    background: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+.delete {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid navy;
+    background: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+}
+

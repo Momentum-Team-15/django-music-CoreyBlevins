@@ -2,6 +2,17 @@
 
 {% block content %}
 
-    <p>{{ album.title }} by {{ album.artist}}</p>
+<div id="album-detail">
+    {% if album.cover %}
+    <img src="{{ album.cover.url }}">
+    {% else %}
+    <p> No image provided.</p>
+    {% endif %}
+    <h4>{{ album.title }} by {{ album.artist}}</h4>
+</div>
 
+<div class="buttons">
+<a class="button edit" href="{% url 'album_edit' pk=album.pk %}">Edit</a>
+<a class="button edit" href="{% url 'delete_album' pk=album.pk %}">Delete</a>
+</div>
 {% endblock %}

@@ -1,11 +1,30 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 
-
-    {% for album in albums %}
-        <img src="{{ album.cover.url }}">
-        <p><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title}}</a> by {{ album.artist }}</p>
-    {% endfor %}
+<a class="button create" href="{% url 'create_album' %}">Add an Album</a>
+<br>
+<br>
+<section id="albums">
+{% for album in albums %}
+<div class="album-box">
+    {% if album.cover %}
+    <img class="album-images" src="{{ album.cover.url }}">
+    {% else %}
+    <img class="album-images" src="media/images/question-mark.png">
+    {% endif %}
+    <div class="info-box">
+        <div class="album-text">
+            <h3>Album: </h3>
+            <a href="{% url 'album_detail' pk=album.pk %}">{{ album.title}}</a> 
+            <h3>Artist: </h3>
+            <p>{{ album.artist }}</p>
+            <h3>Added: </h3>
+            <p>{{ album.created_at }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</section>
 
 {% endblock %}
